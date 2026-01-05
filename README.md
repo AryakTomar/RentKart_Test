@@ -24,7 +24,7 @@ a scalable rental platform for appliances on a subscription basis.
 | id              | Integer | Primary Key |
 | name            | String  | User name   |
 | password        | String  | User password |
-| contact_number  | Integer | Phone number |
+| contact_number  | String | Phone number |
 
 ---
 
