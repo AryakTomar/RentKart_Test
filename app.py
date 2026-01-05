@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.orm import validates
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -28,8 +29,7 @@ class User(db.Model):
         return f"<User {self.name}>"
 
 # Create database & table
-@app.before_first_request
-def create_tables():
+with app.app_context():
     db.create_all()
 
 @app.route('/')
