@@ -15,7 +15,15 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     password = db.Column(db.String(200), nullable=False)
-    contact_number = db.Column(db.String(15), nullable=False)
+    contact_number = db.Column(db.String(10), nullable=False, unique=True)
+
+    #Added validation for Phone Number
+    @validates("contact_number")
+    def validate_contact_number(self, key, number):
+        if not re.fullmatch(r'\d{10}",number):
+                            raise ValueError("Contact number must be exactly 10 digits")
+        return number
+        
 
     def __repr__(self):
         return f"<User {self.name}>"
