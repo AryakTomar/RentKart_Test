@@ -284,66 +284,6 @@ CORS_ALLOW_CREDENTIALS = True
 
 # CORS_ALLOW_CREDENTIALS = True
 
-# # ============================================================================
-# # TELEGRAM BOT CONFIGURATION (ADD THIS SECTION)
-# # ============================================================================
-
-# # Telegram Bot Token - Get this from @BotFather on Telegram
-# # IMPORTANT: Replace with your actual bot token
-# # TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN', 'YOUR_BOT_TOKEN_HERE')
-
-# # Alternative: You can hardcode it for development (NOT RECOMMENDED for production)
-# TELEGRAM_BOT_TOKEN = '8579173598:AAH7g6bRwrwngyJNdKvYqgYpNiF_aiIL2zk'
-
-
-# # ============================================================================
-# # CACHE CONFIGURATION (Required for OTP storage)
-# # ============================================================================
-
-# # For Development: Use Local Memory Cache
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-#         'LOCATION': 'unique-snowflake',
-#         'TIMEOUT': 600,  # Default timeout of 10 minutes
-#         'OPTIONS': {
-#             'MAX_ENTRIES': 1000
-#         }
-#     }
-# }
-
-# # For Production: Use Redis Cache (Recommended)
-# # Uncomment below and install redis: pip install redis django-redis
-# # CACHES = {
-# #     'default': {
-# #         'BACKEND': 'django_redis.cache.RedisCache',
-# #         'LOCATION': 'redis://127.0.0.1:6379/1',
-# #         'OPTIONS': {
-# #             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-# #             'CONNECTION_POOL_KWARGS': {'max_connections': 50}
-# #         }
-# #     }
-# # }
-
-
-# # ============================================================================
-# # REST FRAMEWORK CONFIGURATION (Optional but recommended)
-# # ============================================================================
-
-# REST_FRAMEWORK = {
-#     'DEFAULT_RENDERER_CLASSES': [
-#         'rest_framework.renderers.JSONRenderer',
-#     ],
-#     'DEFAULT_PARSER_CLASSES': [
-#         'rest_framework.parsers.JSONParser',
-#     ],
-# }
-
-
-# # ============================================================================
-# # SECURITY SETTINGS (Optional but recommended for production)
-# # ============================================================================
-
 # # CSRF Settings - if you're having CSRF issues with your frontend
 # CSRF_TRUSTED_ORIGINS = [
 #     'http://localhost:3000',
@@ -356,4 +296,5 @@ CORS_ALLOW_CREDENTIALS = True
 
 # # For development, you might want to disable CSRF on API endpoints
 # # Add this to your API views: @csrf_exempt decorator
+
 # # Or use SessionAuthentication in REST_FRAMEWORK settings
